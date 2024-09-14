@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket Billing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Supermarket Billing System</h1>
+
+        <!-- Products Section -->
+        <div class="products-section">
+            <h2>Available Products</h2>
+            <table id="product-list">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price (INR)</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apple</td>
+                        <td>₹80.00</td>
+                        <td><input type="number" id="qty-apple" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Apple', 80.00, 'qty-apple')">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td>Milk</td>
+                        <td>₹60.00</td>
+                        <td><input type="number" id="qty-milk" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Milk', 60.00, 'qty-milk')">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td>Bread</td>
+                        <td>₹40.00</td>
+                        <td><input type="number" id="qty-bread" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Bread', 40.00, 'qty-bread')">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td>Rice (1kg)</td>
+                        <td>₹50.00</td>
+                        <td><input type="number" id="qty-rice" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Rice', 50.00, 'qty-rice')">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td>Eggs (Dozen)</td>
+                        <td>₹70.00</td>
+                        <td><input type="number" id="qty-eggs" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Eggs', 70.00, 'qty-eggs')">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td>Chicken (1kg)</td>
+                        <td>₹220.00</td>
+                        <td><input type="number" id="qty-chicken" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Chicken', 220.00, 'qty-chicken')">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td>Soap</td>
+                        <td>₹30.00</td>
+                        <td><input type="number" id="qty-soap" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Soap', 30.00, 'qty-soap')">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td>Shampoo</td>
+                        <td>₹150.00</td>
+                        <td><input type="number" id="qty-shampoo" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Shampoo', 150.00, 'qty-shampoo')">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td>Cooking Oil (1L)</td>
+                        <td>₹200.00</td>
+                        <td><input type="number" id="qty-oil" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Cooking Oil', 200.00, 'qty-oil')">Add to Cart</button></td>
+                    </tr>
+                    <tr>
+                        <td>Detergent (1kg)</td>
+                        <td>₹100.00</td>
+                        <td><input type="number" id="qty-detergent" value="1" min="1"></td>
+                        <td><button onclick="addToCart('Detergent', 100.00, 'qty-detergent')">Add to Cart</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="cart-section">
+            <h2>Shopping Cart</h2>
+            <table id="cart">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price (INR)</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Items will be dynamically added here -->
+                </tbody>
+            </table>
+            <div id="cart-total">
+                <h3>Total: ₹<span id="total-amount">0.00</span></h3>
+            </div>
+            <button id="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+
+        <!-- Receipt Section -->
+        <div class="receipt-section" id="receipt-section">
+            <h2>Receipt</h2>
+            <div id="receipt-content">
+                <!-- Receipt will be dynamically generated -->
+            </div>
+            <button id="print-receipt" onclick="printReceipt()">Print Receipt</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
